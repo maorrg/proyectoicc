@@ -1,0 +1,36 @@
+digit=0
+letter=0
+mayus=0
+oldpass="12345"
+user=input("Ingresa usuario:")
+while user!="Andres":
+  if user=="Andres":
+    print("Bienvenido Andres!")
+    print("Contraseña antigua es ",oldpass)
+    print("Necesitas una nueva contraseña!")
+  else:
+    print("Usuario no aceptado!") 
+    user=input("Vuelva a ingresar usuario:")
+if user=="Andres":
+    print("Bienvenido Andres!")
+    print("Contraseña antigua es ",oldpass)
+    print("Necesitas una nueva contraseña!")  
+newpass=input("Ingresa tu contraseña")
+
+if newpass==oldpass:
+  print("Contraseña igual a la anterior")
+  print("Intente de nuevo!")
+
+for i in range(len(newpass)):
+  if newpass[i].isdigit():
+    digit+=1
+  if newpass[i].isalpha():
+    letter+=1
+  if newpass[i].isupper():
+    mayus+=1
+
+if digit>=1 and letter>=1 and mayus>=1:
+  print("Contraseña aceptada!")
+else:
+  print("Contraseña no aceptada!")
+  print("Intente de nuevo!")
